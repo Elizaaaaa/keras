@@ -15,6 +15,7 @@ from keras import backend as K
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger('mnist_cnn')
 
 batch_size = 64
 num_classes = 10
@@ -39,9 +40,9 @@ x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
 x_train /= 255
 x_test /= 255
-print('x_train shape: {}'.format(x_train.shape))
-print('{} train samples'.format(x_train.shape[0]))
-print('{} test samples'.format(x_test.shape[0]))
+logger.info('x_train shape: {}'.format(x_train.shape))
+logger.info('{} train samples'.format(x_train.shape[0]))
+logger.info('{} test samples'.format(x_test.shape[0]))
 
 # convert class vectors to binary class matrices
 y_train = keras.utils.to_categorical(y_train, num_classes)
