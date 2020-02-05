@@ -46,9 +46,12 @@ logger.info('{} test samples'.format(x_test.shape[0]))
 
 # convert class vectors to binary class matrices
 y_train = keras.utils.to_categorical(y_train, num_classes)
+logger.info('y_train = keras.utils.to_categorical(y_train, num_classes)')
 y_test = keras.utils.to_categorical(y_test, num_classes)
+logger.info('y_test = keras.utils.to_categorical(y_test, num_classes)')
 
 model = Sequential()
+logger.info('initiate sequential')
 model.add(Conv2D(32, kernel_size=(3, 3),
                  activation='relu',
                  input_shape=input_shape))
