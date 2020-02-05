@@ -6,13 +6,16 @@ Gets to 99.25% test accuracy after 12 epochs
 '''
 
 from __future__ import print_function
-import keras
+import tensorflow as tf
+import tensorflow.keras as keras
 from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 import logging
+
+tf.debugging.set_log_device_placement(True)
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger('mnist_cnn')
