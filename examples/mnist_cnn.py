@@ -14,6 +14,8 @@ from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 import logging
 
+logging.basicConfig(level=logging.DEBUG)
+
 batch_size = 128
 num_classes = 10
 epochs = 12
