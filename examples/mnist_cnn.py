@@ -16,7 +16,7 @@ import logging
 
 logging.basicConfig(level=logging.DEBUG)
 
-batch_size = 128
+batch_size = 64
 num_classes = 10
 epochs = 12
 
