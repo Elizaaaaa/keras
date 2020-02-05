@@ -60,15 +60,25 @@ model.add(Dense(128, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(num_classes, activation='softmax'))
 
+logger.info('good with create model')
+
 model.compile(loss=keras.losses.categorical_crossentropy,
               optimizer=keras.optimizers.Adadelta(),
               metrics=['accuracy'])
+
+logger.info('compile is fine')
 
 model.fit(x_train, y_train,
           batch_size=batch_size,
           epochs=epochs,
           verbose=1,
           validation_data=(x_test, y_test))
+
+logger.info('train should be okay')
+
 score = model.evaluate(x_test, y_test, verbose=0)
-logging.info('Test loss:', score[0])
+
+logger.info('evaluation done')
+
+logging.info('Test loss: {}'.format(score[0]))
 print('Test accuracy:', score[1])
